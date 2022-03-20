@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://awen123awen.github.io/"/>
-  <updated>2022-03-20T06:50:51.717Z</updated>
+  <updated>2022-03-20T13:47:50.089Z</updated>
   <id>https://awen123awen.github.io/</id>
   
   <author>
@@ -17,67 +17,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>github pages + Hexo</title>
-    <link href="https://awen123awen.github.io/2022/03/20/github-pages-Hexo/"/>
-    <id>https://awen123awen.github.io/2022/03/20/github-pages-Hexo/</id>
-    <published>2022-03-20T06:49:34.000Z</published>
-    <updated>2022-03-20T06:50:51.717Z</updated>
+    <title>markdown语法整理初学加强版</title>
+    <link href="https://awen123awen.github.io/2022/03/20/markdown%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86%E5%88%9D%E5%AD%A6%E5%8A%A0%E5%BC%BA%E7%89%88/"/>
+    <id>https://awen123awen.github.io/2022/03/20/markdown语法整理初学加强版/</id>
+    <published>2022-03-20T12:55:31.000Z</published>
+    <updated>2022-03-20T13:47:50.089Z</updated>
     
-    <content type="html"><![CDATA[<hr><hr><blockquote><p>测试博文</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;hr&gt;
-&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;p&gt;测试博文&lt;/p&gt;
-&lt;/blockquote&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="测试" scheme="https://awen123awen.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>postName</title>
-    <link href="https://awen123awen.github.io/2022/03/20/postName/"/>
-    <id>https://awen123awen.github.io/2022/03/20/postName/</id>
-    <published>2022-03-20T06:44:13.000Z</published>
-    <updated>2022-03-20T06:44:13.935Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>paper</title>
-    <link href="https://awen123awen.github.io/2022/03/20/paper/"/>
-    <id>https://awen123awen.github.io/2022/03/20/paper/</id>
-    <published>2022-03-20T06:01:39.000Z</published>
-    <updated>2022-03-20T06:03:27.395Z</updated>
-    
-    <content type="html"><![CDATA[<p>​    #<strong>New attempt</strong></p><p>​    Welcome to my hexoblog .</p>]]></content>
+    <content type="html"><![CDATA[<p>hello , 作为初学者的第一篇 markdown 语法笔记 ， 由于刚刚学会了如何在hexo博客中插入图片，所以命名其为<strong>markdown语法整理初学加强版</strong>。</p><p><del>纯纯自娱自乐。</del></p><h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h1><p>可使用 # 来写标题</p><p>其中#需要加在行首，例如：</p><p>#标题 效果如下</p><h2 id="一号标题"><a href="#一号标题" class="headerlink" title="一号标题"></a>一号标题</h2><h3 id="二号标题"><a href="#二号标题" class="headerlink" title="二号标题"></a>二号标题</h3><p>需要注意#与标题之间添加空格。</p><hr><h1 id="2-分割线"><a href="#2-分割线" class="headerlink" title="2.分割线"></a>2.分割线</h1><p>使用三个或以上的 <code>-</code> 或者 <code>*</code> 表示，且这一行只有符号，注意不要被识别为二级标题即可，例如中间或者前面可以加空格。</p><hr><h1 id="3-斜体与粗体"><a href="#3-斜体与粗体" class="headerlink" title="3.斜体与粗体"></a>3.斜体与粗体</h1><p>使用 <code>*</code> 和 <code>**</code> 分别表示斜体和粗体，删除线使用两个 <code>~</code> 表示。</p><p>演示删除线效果 <del>这是我要删除的字呦</del></p><hr><h1 id="4-超链接和图片"><a href="#4-超链接和图片" class="headerlink" title="4.超链接和图片"></a>4.超链接和图片</h1><p>链接和图片的写法类似，图片仅在超链接前多了一个 <code>!</code> ，一般是 [文字描述] (链接)</p><p>比如说你可以通过<a href="https://awen123awen.github.io/">点击我</a>来访问我的博客。</p><p>同样也可以通过</p><p><img src="/.io//Users\SuenKaTong\blog\myblog\source\_posts\markdown语法整理初学加强版\cec3eaff8c69cc7548fdd6a741bad6f.jpg" alt="点击我"><del>来查看照片。</del></p><p>好吧我太错了，我还以为图片和链接是一个样子，原来是直接放原图吗。</p><hr><h1 id="5-无序列表"><a href="#5-无序列表" class="headerlink" title="5. 无序列表"></a>5. 无序列表</h1><p>使用 <code>-</code>、<code>+</code> 和 <code>*</code> 表示无序列表，前后留一行空白，可嵌套，例如</p><ul><li>一层<ul><li>二层</li><li>二层<ul><li>三层<ul><li>四层</li></ul></li></ul></li></ul></li></ul><ul><li>一层</li></ul><hr><h1 id="6-有序列表"><a href="#6-有序列表" class="headerlink" title="6.有序列表"></a>6.有序列表</h1><p>使用 <code>1.</code> （点号后面有个空格）表示有序列表，可嵌套。</p><ol><li><p>一层</p><ol><li>二层</li><li>二层</li></ol></li><li><p>一层</p></li></ol><hr><h1 id="7-文字引用"><a href="#7-文字引用" class="headerlink" title="7. 文字引用"></a>7. 文字引用</h1><p>使用&gt;表示，可以使用多个&gt;，表示层级更深，例如</p><blockquote><p> 这是第一层</p><blockquote><p> 这是第二层</p><p>不会轻易的跳出去</p><blockquote><p>还可以更深</p><p>我超，这怎么出去。</p></blockquote></blockquote><p>多回车几次就好了诶，神奇。</p></blockquote><hr><h1 id="8-行内代码块与代码块"><a href="#8-行内代码块与代码块" class="headerlink" title="8.行内代码块与代码块"></a>8.行内代码块与代码块</h1><p>需要使用切英文使用这个`，和<em>星号使用方法相同</em></p><p><code>这是行内代码块</code></p><p>而代码块则是四个空格缩进表示代码块,需要使用<code>`</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这里就是代码块了，哈哈</span><br><span class="line">还能换行</span><br><span class="line">牛蛙</span><br></pre></td></tr></table></figure><h1 id="9-表格"><a href="#9-表格" class="headerlink" title="9.表格"></a>9.表格</h1><p>第二行的 <code>---:</code> 表示了对齐方式，默认<strong>左对齐</strong>，还有 <strong>右对齐</strong> 和 <strong>居中</strong></p><table><thead><tr><th>商品</th><th style="text-align:right">数量</th><th style="text-align:center">单价</th></tr></thead><tbody><tr><td>苹果</td><td style="text-align:right">10</td><td style="text-align:center">\$1</td></tr><tr><td>电脑</td><td style="text-align:right">1</td><td style="text-align:center">\$1000</td></tr></tbody></table><p>就先记录到这里了。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;​    #&lt;strong&gt;New attempt&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;​    Welcome to my hexoblog .&lt;/p&gt;
-
+        &lt;p&gt;hello , 作为初学者的第一篇 markdown 语法笔记 ， 由于刚刚学会了如何在hexo博客中插入图片，所以命名其为&lt;strong&gt;markdown语法整理初学加强版&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;纯纯自娱自乐。&lt;/del&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1
       
     
     </summary>
     
+    
+      <category term="markdown语法" scheme="https://awen123awen.github.io/tags/markdown%E8%AF%AD%E6%B3%95/"/>
     
   </entry>
   
