@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="学习笔记" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="javaweb本笔记记录了有关于Junit单元测试 ，注解， mysql的相关知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习笔记">
+<meta property="og:url" content="https://awen123awen.github.io/2022/05/02/javaweb%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:description" content="javaweb本笔记记录了有关于Junit单元测试 ，注解， mysql的相关知识">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-05-01T16:29:44.663Z">
+<meta property="article:modified_time" content="2022-05-01T16:30:51.992Z">
+<meta property="article:author" content="又菜又爱玩">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://awen123awen.github.io/2022/05/02/javaweb基础/"/>
+
+
+
+
+
+  <title> | 学习笔记</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学习笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://awen123awen.github.io/2022/05/02/javaweb%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-02T00:29:44+08:00">
+                2022-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="javaweb"><a href="#javaweb" class="headerlink" title="javaweb"></a>javaweb</h1><p>本笔记记录了有关于Junit单元测试 ，注解， mysql的相关知识</p>
+<span id="more"></span>
+<h2 id="内容安排"><a href="#内容安排" class="headerlink" title="内容安排"></a>内容安排</h2><ul>
+<li>数据库</li>
+<li>web核心课程</li>
+</ul>
+<p>后期学习路径:</p>
+<ul>
+<li>SSM框架知识: 简化wen开发的经典框架</li>
+<li>SpringBoot: 简化Spring开发的框架</li>
+<li>各种中间件技术:</li>
+<li>容器技术: Docker</li>
+</ul>
+<h2 id="Junit单元测试"><a href="#Junit单元测试" class="headerlink" title="Junit单元测试"></a>Junit单元测试</h2><ul>
+<li>测试分类:<ul>
+<li>黑盒测试</li>
+<li>白盒测试</li>
+</ul>
+</li>
+</ul>
+<p>Junit使用: 白盒测试</p>
+<ul>
+<li>定义一个测试类(测试用例)</li>
+<li>定义测试方法</li>
+<li>给方法加@Test</li>
+<li>导入junit依赖环境</li>
+</ul>
+<p>判定结果:</p>
+<ul>
+<li>红色为失败, 绿色为成功</li>
+<li>一般我们会使用断言操作来处理结果 <code>Assert.assertEquals(期望的结果, result);</code></li>
+</ul>
+<p>补充: 两个注解</p>
+<ul>
+<li>@Before 修饰的方法在测试方法之前被自动执行</li>
+<li>@After 修饰的方法在测试方法之后被自动执行</li>
+</ul>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><ul>
+<li><p>框架: 半成品软件, 可以在框架的基础上进行软件开发, 简化编码</p>
+</li>
+<li><p>反射: 将类的各个组成部分封装为其他对象, 就是反射机制</p>
+<ul>
+<li><p>好处:</p>
+<ul>
+<li>在程序的运行过程中对对象进行操作</li>
+<li>可以解耦, 提高程序的可扩展性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>获取class对象的方式</p>
+<ul>
+<li>Class.forName(“全类名”)：将字节码文件加载进内存, 返回Class对象</li>
+<li>类名.Class : 通过类名的属性Class获取</li>
+<li>对象.getClass(): getClass()方法在Object类中定义</li>
+</ul>
+<p>同一个字节码文件(*.class)在一次程序运行过程中,只会被加载一次,无论通过那种方式获取的Class对象,都是同一个.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RelectDemo1</span> &#123;</span><br><span class="line">	</span><br><span class="line"><span class="comment">//	* Class.forName(&quot;全类名&quot;)：将字节码文件加载进内存, 返回Class对象</span></span><br><span class="line"><span class="comment">//	* 类名.Class : 通过类名的属性Class获取</span></span><br><span class="line"><span class="comment">//	* 对象.getClass(): getClass()方法在Object类中定义</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//1.Class.forName(&quot;全类名&quot;)</span></span><br><span class="line">		Class cls1= Class.forName(<span class="string">&quot;cn.itcast.domain.Person&quot;</span>);</span><br><span class="line">		System.out.println(cls1);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//2.类名.class</span></span><br><span class="line">		<span class="type">Class</span> <span class="variable">cls2</span> <span class="operator">=</span> Person.class;</span><br><span class="line">		System.out.println(cls2);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//3.对象.getClass()</span></span><br><span class="line">		<span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;a&quot;</span>,<span class="number">0</span>);</span><br><span class="line">		<span class="type">Class</span> <span class="variable">cls3</span> <span class="operator">=</span> p.getClass();</span><br><span class="line">		System.out.println(cls3);</span><br><span class="line">		</span><br><span class="line">		System.out.println(cls1==cls2);<span class="comment">//ture</span></span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>使用class对象功能<ul>
+<li>获取功能(详见api文档):<ul>
+<li>获取成员变量们<ul>
+<li>Field[]  getFields( )获取所有Public修饰的成员变量</li>
+<li>Field getField(String name)获取名字</li>
+<li>Field[]  getDeclatedFields( )</li>
+<li>Field getDeclaredField(String name)</li>
+</ul>
+</li>
+<li>获取构造方法们Constructor</li>
+<li>获取成员方法们Methods</li>
+<li>获取类名Name</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Field: 成员变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.itcast.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.itcast.domain.Person;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ReflectDemo2</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="comment">//获取Person 的class 变量</span></span><br><span class="line">		<span class="type">Class</span> <span class="variable">personClass</span> <span class="operator">=</span> Person.class;</span><br><span class="line">		<span class="comment">//Field[] getFields()</span></span><br><span class="line">		Field[] fields =personClass.getFields();</span><br><span class="line">		<span class="keyword">for</span>(Field field: fields) &#123;</span><br><span class="line">			System.out.println(field);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;------------&quot;</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="type">Field</span> <span class="variable">a</span> <span class="operator">=</span> personClass.getField(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">		<span class="comment">//获取成员变量a的值</span></span><br><span class="line">		<span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">		<span class="type">Object</span> <span class="variable">value</span> <span class="operator">=</span> a.get(p);</span><br><span class="line">		</span><br><span class="line">		System.out.println(value);<span class="comment">//字符串的值默认为null</span></span><br><span class="line">		</span><br><span class="line">		a.set(p, <span class="string">&quot;zhangsan&quot;</span>);</span><br><span class="line">		System.out.println(p);</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;===========&quot;</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//Field[] getDeclaredFields() 获取所有的成员变量,不考虑修饰符</span></span><br><span class="line">		Field[] declaredFields = personClass.getDeclaredFields();</span><br><span class="line">		<span class="keyword">for</span>(Field declaredField : declaredFields) &#123;</span><br><span class="line">			System.out.println(declaredField);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//Field getDeclaredField(String name)</span></span><br><span class="line">		<span class="type">Field</span> <span class="variable">d</span> <span class="operator">=</span> personClass.getDeclaredField(<span class="string">&quot;d&quot;</span>);</span><br><span class="line">		<span class="comment">//忽略访问权限修饰符的安全检查</span></span><br><span class="line">		d.setAccessible(<span class="literal">true</span>);<span class="comment">//暴力反射</span></span><br><span class="line">		<span class="type">Object</span> <span class="variable">value2</span> <span class="operator">=</span> d.get(p);</span><br><span class="line">		System.out.println(value2);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-注解"><a href="#3-注解" class="headerlink" title="3.注解"></a>3.注解</h3><blockquote>
+<p>定义：从JDK5开始,Java增加对元数据的支持，也就是注解，注解与注释是有一定区别的，可以把注解理解为代码里的特殊标记，这些标记可以在编译，类加载，运行时被读取，并执行相应的处理。通过注解开发人员可以在不改变原有代码和逻辑的情况下在源代码中嵌入补充信息。</p>
+</blockquote>
+<p>简单来说：</p>
+<p> 概念：说明程序的，给计算机看</p>
+<p> 注释：用文字描述程序，给程序员看</p>
+<p>使用注解：@注解名称</p>
+<p>作用分类：</p>
+<p>1.编写文档：通过代码里标识的注解生成文档 【生成文档doc文档】</p>
+<p>2.代码分析：通过代码里标识的注解对代码进行分析 【使用反射】</p>
+<p>3.编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查 【Override】</p>
+<h4 id="JDK中预定义的一些注解"><a href="#JDK中预定义的一些注解" class="headerlink" title="JDK中预定义的一些注解"></a>JDK中预定义的一些注解</h4><p>@Override：检测被该注解标注的方法是否是继承自父类(接口)</p>
+<p>@Deprecated：给注解标注的内容，表示已过时</p>
+<p>@SuppressWarnings：压制警告，一般传递参数all</p>
+<p> 例如：@SuppressWarnings(“all”)</p>
+<h4 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h4><p>格式：</p>
+<ul>
+<li><p>元注解</p>
+</li>
+<li><p>public @interface 注解名称{</p>
+<p> 属性列表;</p>
+<p>}</p>
+</li>
+</ul>
+<p>本质：就是一个接口，该接口默认继承Annotation接口</p>
+<p> public interface MyAnno extends java.lang.annotation.Annotation {}</p>
+<p>属性：接口中可以定义的抽象方法</p>
+<p> 要求：</p>
+<p> 1.属性的返回值类型有下列取值</p>
+<p> 基本数据类型</p>
+<p> String</p>
+<p> 枚举</p>
+<p> 注解</p>
+<p> 以上类型的数组</p>
+<p> 2.定义了属性，使用时需要给属性赋值</p>
+<p> 1.如果定义属性时，使用default关键字给属性默认初始化值，则使用注解时，可以不进行属性的赋值</p>
+<p> 2.如果只有一个属性需要赋值，并且属性名称是value，则可省略value，直接定义值即可</p>
+<p> 3.数组赋值时，值使用{}包裹，如果数组中只有一个值，则{}省略</p>
+<p><strong>元注解：用于描述注解的注解</strong></p>
+<ul>
+<li><p>@Target：描述注解能够作用的位置</p>
+<p> ElementType取值：</p>
+<p> TYPE：可以作用在类上</p>
+<p> METHOD：可以作用在方法上</p>
+<p> FIELD：可以作用在成员变量上</p>
+</li>
+<li><p>@Retention：描述注解被保留阶段</p>
+<p> @Retention(RetentionPolicy.RUNTIME)：当前被描述的注解，会保留到class字节码文件中，并被JVM读取到</p>
+</li>
+<li><p>@Documented：描述注解是否被抽取到API文档</p>
+</li>
+<li><p>@Inherited：描述注解是否被子类继承</p>
+</li>
+</ul>
+<h4 id="在程序中使用-解析-注解：获取注解中定义的属性值"><a href="#在程序中使用-解析-注解：获取注解中定义的属性值" class="headerlink" title="在程序中使用(解析)注解：获取注解中定义的属性值"></a>在程序中使用(解析)注解：获取注解中定义的属性值</h4><p>1.获取注解定义的位置的对象 （Class，Method，Field）</p>
+<p>2.获取指定的注释</p>
+<p> getAnnotation(Class),其实就是在内存中生成一个该注解接口的子类实现对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//自动默认完成的</span><br><span class="line">public class ProImpl implements Pro&#123;</span><br><span class="line">	public String className()&#123;</span><br><span class="line">		return &quot;cn.itcast.annotation.Demo1&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	public String methodName()&#123;</span><br><span class="line">		return &quot;show&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.调用注解中的抽象方法获取配置的属性值</p>
+<p>小结：</p>
+<p>1.多数时候会使用注解，而不是自定义注解</p>
+<p>2.使用者：</p>
+<ul>
+<li>编译器</li>
+<li>给解析程序用</li>
+</ul>
+<p>3.注解不是程序的一部分，可理解为注解是一个标签</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/04/23/java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E8%BF%9B%E9%98%B6/" rel="next" title="java核心技术进阶">
+                <i class="fa fa-chevron-left"></i> java核心技术进阶
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javaweb"><span class="nav-number">1.</span> <span class="nav-text">javaweb</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E5%AE%89%E6%8E%92"><span class="nav-number">1.1.</span> <span class="nav-text">内容安排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Junit%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-number">1.2.</span> <span class="nav-text">Junit单元测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84"><span class="nav-number">1.3.</span> <span class="nav-text">反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK%E4%B8%AD%E9%A2%84%E5%AE%9A%E4%B9%89%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">JDK中预定义的一些注解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">自定义注解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E4%BD%BF%E7%94%A8-%E8%A7%A3%E6%9E%90-%E6%B3%A8%E8%A7%A3%EF%BC%9A%E8%8E%B7%E5%8F%96%E6%B3%A8%E8%A7%A3%E4%B8%AD%E5%AE%9A%E4%B9%89%E7%9A%84%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">在程序中使用(解析)注解：获取注解中定义的属性值</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">又菜又爱玩</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
